@@ -1,0 +1,33 @@
+{
+  "products" : [
+    {
+      "name" : "TV",
+      "price" : 1000,
+      "currency" : "USD"
+    },
+    {
+      "name" : "SSD",
+      "price" : 100,
+      "currency" : "USD"
+    },
+    {
+      "name" : "Monitor",
+      "price" : 120,
+      "currency" : "USD"
+    }
+  ],
+  "permissions": [
+    {
+      "create": "CREATE"
+    },
+    {
+      "read": "READ"
+    },
+    {
+      "update": "UPDATE"
+    },
+    {
+      "delete": "DELETE"
+    }
+  ]
+}
