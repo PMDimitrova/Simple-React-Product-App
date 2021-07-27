@@ -1,6 +1,13 @@
+import {Fragment} from "react";
+import InputForm from "../InputForm/InputForm";
+import ShowProducts from "../ShowProducts/ShowProducts";
+
 const ProductsPage = () =>{
     return(
-        <p>Here will be the main logic</p>
+        <Fragment>
+            <InputForm/>
+            <ShowProducts/>
+        </Fragment>
     )
 }
 export default ProductsPage;
