@@ -1,19 +1,22 @@
 {
-  "products" : [
+  "books" : [
     {
-      "name" : "TV",
-      "price" : 1000,
-      "currency" : "USD"
+      "title" : "Mission London",
+      "author" : "Alek Popov",
+      "year" : 2001,
+      "language" : "Bulgarian"
     },
     {
-      "name" : "SSD",
-      "price" : 100,
-      "currency" : "USD"
+      "title" : "The Colour of Magic",
+      "author" : "Terry Pratchett",
+      "year" : 1983,
+      "language" : "English"
     },
     {
-      "name" : "Monitor",
-      "price" : 120,
-      "currency" : "USD"
+      "title" : "The Three Musketeers",
+      "author" : "Alexandre Dumas",
+      "year" : 1983,
+      "language" : "German"
     }
   ],
   "permissions": [

@@ -3,21 +3,29 @@ import {Fragment} from "react";
 const InputForm = () => {
     return(
         <Fragment>
-            <h2>Please add the product details here:</h2>
+            <h2>**New product form**</h2>
             <form>
-                <input type="text" id="name"/>
-                {/*todo should not be smaller than 0*/}
-                <input type="number" id="price"/>
-                <select id="price">
-                    <option value="USD" selected>USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="BGN">BGN</option>
-                </select>
-                {/*todo add create option*/}
-                <input type="submit" value="Add product"/>
-            </form>
-        </Fragment>
+                <fieldset>
+                    <legend>Please fill the new book details here:</legend>
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" name="name" id="bookTitle" placeholder="Title"/>
 
+                    <label for="bookYear">Publishing year:</label>
+                    <input type="number" id="bookYear" value="2000"/>
+
+                    <label for="prodPrice">Book language:</label>
+                    <select id="language">
+                    <option value="BG" selected>Bulgarian</option>
+                    <option value="ENG">English</option>
+                    <option value="DE">German</option>
+                </select>
+                    <button>Add</button>
+                    {/*todo add onSubmitHandler*/}
+
+                </fieldset>
+            </form>
+
+        </Fragment>
     )
 }
 export default InputForm;
