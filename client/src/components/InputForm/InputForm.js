@@ -1,8 +1,7 @@
 import {Fragment} from "react";
 import * as bookService from '../../services/bookService';
-import Bookshelf from "../Bookshelf/Bookshelf";
 
-const InputForm = (
+const InputForm = (props,
     {
         history
     }
@@ -41,7 +40,7 @@ const InputForm = (
                     <option value="English">English</option>
                     <option value="German">German</option>
                 </select>
-                    <input className="button" type="submit" value="Add book to shelf"/>
+                    <input className="button" type="submit" value="Add book"/>
 
                 </fieldset>
             </form>
