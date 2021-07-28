@@ -1,13 +1,13 @@
 import {Fragment} from "react";
 import InputForm from "../InputForm/InputForm";
-import ShowBooks from "../ShowBooks/ShowBooks";
+import Bookshelf from "../ShowBooks/Bookshelf";
 
-const Bookshelf = () =>{
+const Library = () =>{
     return(
         <Fragment>
             <InputForm/>
-            <ShowBooks/>
+            <Bookshelf/>
         </Fragment>
     )
 }
-export default Bookshelf;
+export default Library;

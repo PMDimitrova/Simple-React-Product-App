@@ -1,0 +1,20 @@
+{
+  "permissions": [
+    {
+      "id": "1",
+      "create": true
+    },
+    {
+      "id": "2",
+      "read": true
+    },
+    {
+      "id": "3",
+      "update": true
+    },
+    {
+      "id": "4",
+      "delete": true
+    }
+  ]
+}
