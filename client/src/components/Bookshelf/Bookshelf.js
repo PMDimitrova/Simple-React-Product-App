@@ -5,6 +5,7 @@ import style from "./Bookshelf.css"
 import DeleteBtn from "../Buttons/DeleteBtn";
 import UpdateBtn from "../Buttons/UpdateBtn";
 import {deleteAvailability} from "../../services/permissionService";
+import {Link} from "react-router-dom";
 
 class Bookshelf extends Component {
 
@@ -22,20 +23,23 @@ class Bookshelf extends Component {
     componentDidMount() {
         bookService.getAll()
             .then(res => this.setState({books: res}));
+        console.log('component mounting')
 
     }
 
-    componentShouldUpdate(){
-        bookService.getAll()
-            .then(res => this.setState({books: res}));
-    }
+    componentDidUpdate(prevProps, prevState) {
+        console.log(prevState);
+        console.log(this.state)
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     bookService.getAll()
-    //         .then(res => {
-    //             this.setState({books: res})
-    //         });
-    // }
+        if (prevState.books.length !== this.state.books.length){
+            bookService.getAll()
+                .then(res => {
+                    this.setState({books: res})
+                });
+            console.log('==-=======');
+        }
+
+    }
 
     deleteBtn() {
         if (this.state.delete)
@@ -83,7 +87,8 @@ class Bookshelf extends Component {
     render() {
         return (
             <Fragment>
-                <p>Your Books</p>
+                <p><Link to="/add-book">Add new book</Link></p>
+                <h2>Your Books</h2>
                 <table className="bookshelf" style={style}>
                     <tbody>
                     <tr>

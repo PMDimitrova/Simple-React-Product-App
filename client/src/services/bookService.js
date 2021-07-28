@@ -3,7 +3,7 @@ const baseUrl = 'http://localhost:3004';
 
 export const getAll = () => {
     return fetch(`${baseUrl}/books`)
-        .then( res => res.json())
+        .then(res => res.json())
         .catch(err => console.log('Error: ' + err));
 }
 

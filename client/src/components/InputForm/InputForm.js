@@ -1,14 +1,21 @@
 import {Fragment} from "react";
 import * as bookService from '../../services/bookService';
-import Bookshelf from "../ShowBooks/Bookshelf";
+import Bookshelf from "../Bookshelf/Bookshelf";
 
-const InputForm = () => {
+const InputForm = (
+    {
+        history
+    }
+) => {
     const onSubmitBookHandler = (e) => {
         e.preventDefault();
 
         const {title, author, year, language } = e.target;
 
-        bookService.create(title.value, author.value, year.value, language.value);
+        bookService.create(title.value, author.value, year.value, language.value)
+            .then(() =>{
+                history.push('/library');
+            });
     };
 
     const currentYear = new Date().getFullYear();
