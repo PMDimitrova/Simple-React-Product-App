@@ -1,36 +1,25 @@
 {
-  "books" : [
+  "books": [
     {
-      "title" : "Mission London",
-      "author" : "Alek Popov",
-      "year" : 2001,
-      "language" : "Bulgarian"
+      "id": "1",
+      "title": "Mission London",
+      "author": "Alek Popov",
+      "year": 2001,
+      "language": "Bulgarian"
     },
     {
-      "title" : "The Colour of Magic",
-      "author" : "Terry Pratchett",
-      "year" : 1983,
-      "language" : "English"
+      "id": "2",
+      "title": "The Colour of Magic",
+      "author": "Terry Pratchett",
+      "year": 1983,
+      "language": "English"
     },
     {
-      "title" : "The Three Musketeers",
-      "author" : "Alexandre Dumas",
-      "year" : 1983,
-      "language" : "German"
-    }
-  ],
-  "permissions": [
-    {
-      "create": "CREATE"
-    },
-    {
-      "read": "READ"
-    },
-    {
-      "update": "UPDATE"
-    },
-    {
-      "delete": "DELETE"
+      "id": "3",
+      "title": "The Three Musketeers",
+      "author": "Alexandre Dumas",
+      "year": 1983,
+      "language": "German"
     }
   ]
 }

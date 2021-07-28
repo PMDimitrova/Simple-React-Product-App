@@ -2,14 +2,14 @@ import {Route, Switch} from "react-router-dom";
 import './App.css';
 
 import Welcome from './components/Welcome/Welcome'
-import ProductsPage from "./components/ProductsPage/ProductsPage";
+import Bookshelf from "./components/Bookshelf/Bookshelf";
 
 function App() {
   return (
     <div className="App">
         <Switch>
             <Route path="/" exact component={Welcome}/>
-            <Route path="/products" component={ProductsPage}/>
+            <Route path="/bookshelf" component={Bookshelf}/>
         </Switch>
     </div>
   );

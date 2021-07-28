@@ -5,7 +5,7 @@ const Welcome = () => {
         <main className="main-container">
             <h1 className="welcome-greeting">Welcome!</h1>
             <p>Please click {' '}
-                <Link to="/products">here</Link>
+                <Link to="/bookshelf">here</Link>
                 {' '}to proceed</p>
 
         </main>

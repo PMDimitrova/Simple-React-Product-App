@@ -1,26 +1,39 @@
 import {Fragment} from "react";
+import * as bookService from '../../services/bookService';
 
 const InputForm = () => {
+    const onSubmitBookHandler = (e) => {
+        e.preventDefault();
+
+        const {title, author, year, language } = e.target;
+
+        bookService.create(title.value, author.value, year.value, language.value);
+    };
+
+    const currentYear = new Date().getFullYear();
+
     return(
         <Fragment>
-            <h2>**New product form**</h2>
-            <form>
+            <h2>**New Book Form**</h2>
+            <form onSubmit={onSubmitBookHandler}>
                 <fieldset>
-                    <legend>Please fill the new book details here:</legend>
-                    <label for="bookTitle">Title:</label>
-                    <input type="text" name="name" id="bookTitle" placeholder="Title"/>
+                    <legend>Please fill the book details here:</legend>
+                    <label htmlFor="bookTitle">Title:</label>
+                    <input type="text" name="title" id="bookTitle" placeholder="Title"/>
 
-                    <label for="bookYear">Publishing year:</label>
-                    <input type="number" id="bookYear" value="2000"/>
+                    <label htmlFor="bookAuthor">Author:</label>
+                    <input type="text" name="author" id="bookAuthor" placeholder="Author"/>
 
-                    <label for="prodPrice">Book language:</label>
-                    <select id="language">
-                    <option value="BG" selected>Bulgarian</option>
-                    <option value="ENG">English</option>
-                    <option value="DE">German</option>
+                    <label htmlFor="bookYear">Year bought:</label>
+                    <input type="number" name="year" id="bookYear" placeholder="2000" min="1990" max={currentYear}/>
+
+                    <label htmlFor="prodPrice">Book language:</label>
+                    <select name="language" id="language">
+                    <option value="Bulgarian" selected>Bulgarian</option>
+                    <option value="English">English</option>
+                    <option value="German">German</option>
                 </select>
-                    <button>Add</button>
-                    {/*todo add onSubmitHandler*/}
+                    <input className="button" type="submit" value="Add book to shelf"/>
 
                 </fieldset>
             </form>
