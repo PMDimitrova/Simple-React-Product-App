@@ -1,19 +1,19 @@
 {
   "permissions": [
     {
-      "id": "1",
+      "id": "create",
       "create": true
     },
     {
-      "id": "2",
+      "id": "read",
       "read": true
     },
     {
-      "id": "3",
+      "id": "update",
       "update": true
     },
     {
-      "id": "4",
+      "id": "delete",
       "delete": true
     }
   ]

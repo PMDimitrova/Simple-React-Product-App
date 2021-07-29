@@ -18,14 +18,43 @@ export const create = (title, author, year, language) => {
     return fetch(`${baseUrl}/books`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(book)
     });
 };
 
-//delete service -> the show products -> delete btn
+export const deleteBook = (id) =>{
+    return fetch(`${baseUrl}/books/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
 
+export const getBook = (id) => {
+    return fetch(`${baseUrl}/books/${id}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+}
 
-
-//update service -> show products -> update btn
+export const updateBook = (id) => {
+    // let book = {
+    //     title,
+    //     author,
+    //     year,
+    //     language
+    // };
+    //
+    // return fetch(`${baseUrl}/books`, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(book)
+    // });
+}

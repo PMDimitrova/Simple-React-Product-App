@@ -1,11 +1,8 @@
 import {Fragment} from "react";
+
 import * as bookService from '../../services/bookService';
 
-const InputForm = (props,
-    {
-        history
-    }
-) => {
+const InputForm = (props) => {
     const onSubmitBookHandler = (e) => {
         e.preventDefault();
 
@@ -13,7 +10,7 @@ const InputForm = (props,
 
         bookService.create(title.value, author.value, year.value, language.value)
             .then(() =>{
-                history.push('/library');
+                props.history.push('/library');
             });
     };
 

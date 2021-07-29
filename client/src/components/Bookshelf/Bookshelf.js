@@ -1,17 +1,20 @@
 import {Component, Fragment} from "react";
-import * as bookService from "../../services/bookService"
+import * as bookService from "../../services/bookService";
+import * as permissionService from "../../services/permissionService";
 
 import style from "./Bookshelf.css"
-import InputForm from "../InputForm/InputForm";
 import TableData from "./TableData";
+import {Link} from "react-router-dom";
 
 class Bookshelf extends Component {
-
     constructor(props) {
         super(props);
+
+        const create = permissionService.isCreateEnabled();
+
         this.state = {
             books: [],
-            create: true,
+            create: create,
             read: true,
             update: true,
             delete: true
@@ -34,8 +37,10 @@ class Bookshelf extends Component {
 
     addNewBook() {
         if (this.state.create) {
-            return (
-                <InputForm permission={this.state.create}/>
+            return (<Fragment>
+                <h2>***If you want to add new book</h2>
+                <h3>please click <Link to="/add-book" permission={this.state.create}>here</Link>***</h3>
+            </Fragment>
             )
         } else {
             return (
@@ -65,7 +70,10 @@ class Bookshelf extends Component {
             )
         }else{
             return (
-                <p>Sadly you have no permission to see the content of the bookshelf</p>
+                <Fragment>
+                    <h2>**Your Books**</h2>
+                    <p>Sadly you have no permission to see the content of the bookshelf</p>
+                </Fragment>
             )
         }
     }
@@ -73,8 +81,8 @@ class Bookshelf extends Component {
     render() {
         return(
             <Fragment>
-                {this.addNewBook()}
                 {this.renderTheWholeTable()}
+                {this.addNewBook()}
             </Fragment>
         )
     }

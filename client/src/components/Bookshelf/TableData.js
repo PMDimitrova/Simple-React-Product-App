@@ -1,20 +1,21 @@
 import DeleteBtn from "../Buttons/DeleteBtn";
-import UpdateBtn from "../Buttons/UpdateBtn";
-
 
 const TableData = (props) => {
-    const deleteBtn = () => {
+
+    const deleteBtn = (id) => {
         if (props.delete)
             return (
-                <DeleteBtn/>
+                <DeleteBtn idToDelete={id} books={props.books}/>
             )
     }
 
-    const updateBtn = () => {
-        if (props.update)
+    const updateBtn = (id, title, author, year, language) => {
+        if (props.update) {
             return (
-                <UpdateBtn/>
+                <button>UPDATE</button>
+                // <button onClick={showEditPage(book)}>UPDATE</button>
             )
+        }
     }
 
     const noActionsPossible = () => {
@@ -22,7 +23,6 @@ const TableData = (props) => {
             return (
                 <tr>Update/Delete options unavailable</tr>
             )
-
         }
     }
     return props.books.map(book => {
@@ -34,8 +34,8 @@ const TableData = (props) => {
                 <td>{year}</td>
                 <td>{language}</td>
                 <td>
-                    {updateBtn()}
-                    {deleteBtn()}
+                    {updateBtn(id, title, author, year, language)}
+                    {deleteBtn(id)}
                     {noActionsPossible()}
                 </td>
             </tr>

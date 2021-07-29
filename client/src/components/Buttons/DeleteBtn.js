@@ -1,12 +1,12 @@
-import {render} from "react-dom";
-import {deleteAvailability} from "../../services/permissionService";
+import {deleteBook} from "../../services/bookService";
 
-const DeleteBtn = () => {
-    // console.log(deleteAvailability());
+const DeleteBtn = (props) => {
+
+    const onDeleteButtonClick = () => {
+        deleteBook(props.idToDelete);
+    }
     return(
-        <button>DELETE</button>
+        <button onClick={onDeleteButtonClick}>DELETE</button>
     )
-
-
 }
 export default DeleteBtn;
