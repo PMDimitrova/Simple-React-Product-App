@@ -1,4 +1,6 @@
 import DeleteBtn from "../Buttons/DeleteBtn";
+import UpdateBtn from "../Buttons/UpdateBtn";
+import {Link} from "react-router-dom";
 
 const TableData = (props) => {
 
@@ -9,10 +11,10 @@ const TableData = (props) => {
             )
     }
 
-    const updateBtn = (id, title, author, year, language) => {
+    const updateBtn = (book) => {
         if (props.update) {
             return (
-                <button>UPDATE</button>
+                <UpdateBtn bookToUpdate={book}/>
                 // <button onClick={showEditPage(book)}>UPDATE</button>
             )
         }
@@ -34,7 +36,7 @@ const TableData = (props) => {
                 <td>{year}</td>
                 <td>{language}</td>
                 <td>
-                    {updateBtn(id, title, author, year, language)}
+                    {updateBtn(book)}
                     {deleteBtn(id)}
                     {noActionsPossible()}
                 </td>

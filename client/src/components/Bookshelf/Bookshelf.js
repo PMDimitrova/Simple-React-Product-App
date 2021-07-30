@@ -26,14 +26,14 @@ class Bookshelf extends Component {
             .then(res => this.setState({books: res}));
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.books.length !== this.state.books.length) {
-            bookService.getAll()
-                .then(res => {
-                    this.setState({books: res})
-                });
-        }
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevState.books.length !== this.state.books.length) {
+    //         bookService.getAll()
+    //             .then(res => {
+    //                 this.setState({books: res})
+    //             });
+    //     }
+    // }
 
     addNewBook() {
         if (this.state.create) {

@@ -14,7 +14,7 @@
     },
     {
       "id": "delete",
-      "delete": true
+      "delete": false
     }
   ]
 }

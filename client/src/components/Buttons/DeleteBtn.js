@@ -3,6 +3,8 @@ import {deleteBook} from "../../services/bookService";
 const DeleteBtn = (props) => {
 
     const onDeleteButtonClick = () => {
+        console.log(props.books);
+
         deleteBook(props.idToDelete);
     }
     return(

@@ -42,19 +42,14 @@ export const getBook = (id) => {
     })
 }
 
-export const updateBook = (id) => {
-    // let book = {
-    //     title,
-    //     author,
-    //     year,
-    //     language
-    // };
-    //
-    // return fetch(`${baseUrl}/books`, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(book)
-    // });
+export const updateBook = (book) => {
+    console.log(book);
+
+    return fetch(`${baseUrl}/books/${book.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(book)
+    });
 }
